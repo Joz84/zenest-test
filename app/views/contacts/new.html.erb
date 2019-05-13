@@ -1,0 +1,47 @@
+<% content_for :meta_title, "Devis massage entreprise - Zenest" %>
+
+<%= render 'shared/banner_half_screen' , title: "Le Bien-être en Entreprise" %>
+
+<div class="wrapper wrapper-blue position-relative">
+<%= image_tag  'home_picto/logo_white.png' , class: "position-absolute position-background-bird-bottom" %>
+<div class="container">
+  <div class="w-100 p-4">
+    <div class="row">
+      <div class="col-12 col-lg-8 offset-lg-2">
+        <h2 class= 'text-center'>Demandez votre Devis</h2>
+        <%= simple_form_for @contact do |f| %>
+          <%= f.input :company, label: false, placeholder:"Société *", :required => true %>
+          <div class="row">
+            <div class="col-12 col-md-6"> <%= f.input :first_name, label: false, placeholder:"Prénom" %></div>
+            <div class="col-12 col-md-6"> <%= f.input :last_name, label: false, placeholder:"Nom *", :required => true %></div>
+            </div>
+            <%= f.input :email, label: false, placeholder:"Email", :html => { class: "form-control"}%>
+            <%= f.input :phone, label: false, placeholder:"Numéro de Téléphone *", :required => true %>
+            <%= f.input :message, :as => :text,  label: false, placeholder:"Message", :required => true , input_html: { rows: "6"}%>
+            <div class="text-center">
+              <%= f.submit 'Envoyer votre demande', :class=> "button-border-white px-4 py-3 border-radius-100px" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-12 col-lg-10 offset-lg-1">
+        <div class="row">
+          <div class="col-12 text-center mt-5">
+            <p class="quicksandlight mb-2">Vous pouvez aussi nous appeler directement au :</p>
+            <p class='mb-2'><a href="tel:+33986703736" class="text-white">+33 (0)9 86 70 37 36</a></p>
+
+            <p class="quicksandlight mb-2">Ou nous envoyer un email à :</p>
+            <p><a href="mailto:contact@zenest.com" class="text-white link-opacity">contact@zenest.com</a></p>
+            <h3 class="text-center">Suivez l'aventure Zenest!</h3>
+            <%= render 'shared/footer_icon' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+

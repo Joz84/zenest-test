@@ -1,0 +1,15 @@
+<p>Bonjour <%= @user.first_name %>,</p>
+
+<p>Tu as été retenu pour des prestations ! 😊</p>
+
+<p>Voici les informations exactes ci-dessous :</p>
+
+<p><%= @requirement.massage_category.name %> le <%= l(@requirement.calendar_day.date, format: :long) %> </p>
+
+<p><%= @company.name %></p>
+<p><%= @company.full_address %></p>
+<p>Contact sur place : <%= @company.admin.name %> <%= @company.admin&.phone %></p>
+
+<p>Belle journée,</p>
+<p>La Zenesteam</p>
+

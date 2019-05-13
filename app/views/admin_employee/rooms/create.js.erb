@@ -1,0 +1,24 @@
+function refreshForm(innerHTML) {
+  const newRoomForm = document.getElementById('new-room');
+  newRoomForm.innerHTML = innerHTML;
+}
+function addRoom(roomHTML) {
+  const roomlist = document.getElementById('list-rooms');
+  roomlist.insertAdjacentHTML('afterbegin', roomHTML);
+}
+function refreshRooms(innerHTML) {
+  const rooms = document.getElementById('rooms');
+  rooms.innerHTML = innerHTML;
+}
+
+<% if @room.errors.any? %>
+  refreshForm('<%= j render "admin_employee/rooms/form", room: @room %>');
+<% elsif @rooms.count > 1 %>
+  addRoom('<%= j render "admin_employee/rooms/room", room: @room %>');
+  refreshForm('<%= j render "admin_employee/rooms/form", room: Room.new %>');
+<% else %>
+  refreshForm('<%= j render "admin_employee/rooms/form", room: Room.new %>');
+  refreshRooms('<%= j render "admin_employee/rooms/rooms", rooms: @rooms %>');
+<% end %>
+
+

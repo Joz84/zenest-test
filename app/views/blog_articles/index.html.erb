@@ -1,0 +1,18 @@
+<% content_for :meta_title, "Le blog dédié au bien-être au travail - Zenest" %>
+
+<div class="page-min-height">
+  <div class="wrapper-light-blue position-relative py-3 margin-negative-16px">
+    <div class="wrapper wrapper-blue py-4 px-5 position-relative text-center">
+      <%= image_tag  'home_picto/logo_white.png' , class: "position-absolute position-background-bird" %>
+      <h1 class="my-4">Notre blog dédié au bien-être en entreprise</h1>
+      <div class="my-4">
+        <p class="m-auto mw-700px font-20px">L'art de se reposer fait partie de l'art de travailler</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="card-columns">
+      <%= render @articles %>
+    </div>
+  </div>
+</div>

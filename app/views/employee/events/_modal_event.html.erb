@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" id="eventModalEmployee-<%= id %>" tabindex="-1" role="dialog" aria-labelledby="eventModalEmployeeLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventModalEmployeeLabel">Prestation du <%= event.start_date.strftime("%d/%m/%Y à %Hh%M") %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row m-2">
+          <div class="col-8 text-left">
+            <p><%= event.massage_category.name %></p>
+            <p class="quicksandlight mb-0">Praticien: <%= event.praticien.name %></p>
+            <p class="quicksandlight mb-0">Lieu: <%= event.room&.name || event.company.name %></p>
+            <p class="quicksandlight mb-0">Durée: <%= event.duration %> min</p>
+            <p class="quicksandlight mb-0">Prestation en <%= group_or_individual_event(event) %></p>
+          </div>
+          <div class="col-4">
+            <%= cl_image_tag event.massage_category.photo, class: 'avatar' %>
+          </div>
+        </div>
+        <div class="text-<%= attendee_status_color(event.attendee_for_current_user(current_user)) %> text-center">
+          Prestation <%= attendee_status_name(event.attendee_for_current_user(current_user))%>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <% if (event.attendee_for_current_user(current_user).confirmed? && event.future_past != "past") && !event.today?%>
+          <%# if policy(event.attendee_for_current_user(current_user)).create? %>
+            <%= link_to "Annuler la prestation", employee_attendee_path(event.attendee_for_current_user(current_user), status: 1), method: :put, class: "btn btn-sm btn-danger" %>
+          <%# end %>
+        <% end %>
+        <% if event.attendee_for_current_user(current_user).cancelled? && event.future_past != "past" && event.active? && event.available? %>
+          <%= link_to "Réserver la prestation de nouveau", employee_attendee_path(event.attendee_for_current_user(current_user), status: 0), method: :put, class: "btn btn-sm btn-success" %>
+        <% end %>
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>

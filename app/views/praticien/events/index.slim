@@ -1,0 +1,14 @@
+== render 'praticien/toolbar_praticien'
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Prestations à venir
+    == render "events_by_calendar_days", events: @events, time_slot: "future"
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Prestations passées
+    == render "events_by_calendar_days", events: @events, time_slot: "past"
+
+
+
+

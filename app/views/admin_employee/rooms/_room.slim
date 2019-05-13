@@ -1,0 +1,9 @@
+tr.room id="room#{room.id}"
+  | <td class="d-none d-sm-table-cell">#{room.name}</td>
+  | <td class="d-none d-sm-table-cell">#{room.capacity} pers.</td>
+  td.d-none.d-sm-table-cell
+    = link_to edit_admin_employee_room_path(room),remote: true, class: 'mr-3 edit-room-btn' do
+      | <i class="fas fa-pencil-alt text-primary"></i>
+    = link_to admin_employee_room_path(room), method: :delete, remote: true, data: { confirm: t('sure?') } do
+      | <i class="fas fa-trash-alt text-primary"></i>
+

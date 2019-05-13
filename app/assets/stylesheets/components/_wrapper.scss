@@ -1,0 +1,25 @@
+// All Scss must be ordered by tag then class then id and by alphabetic order
+.wrapper {
+  overflow: hidden;
+  h2{
+    font-size: 35px;
+    letter-spacing: .1rem;
+  }
+  h3{
+    font-size: 25px;
+  }
+}
+.wrapper-blue {
+  background: linear-gradient(90deg, rgba(30, 130, 187, 1), rgba(140, 208, 234, 1));
+  color: $white;
+}
+.wrapper-light-blue {
+  background: linear-gradient(90deg, rgba(30, 130, 187, 0.7), rgba(140, 208, 234, 0.7));
+  z-index: 2;
+}
+.wrapper-beige {
+  background-color: rgba(215, 210, 200, 0.5);
+}
+.wrapper-light-beige {
+  background-color: rgba(215, 210, 200, 0.4);
+}

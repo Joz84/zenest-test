@@ -1,0 +1,33 @@
+= content_for(:toolbar)
+  .grey-card.p-4
+    = cl_image_tag current_user.company.logo, class: 'square-avatar'
+    h5.p-2 = current_user.name
+    .grey-card-user-details
+      p.quicksandlight.text-nowrap.text-truncate = current_user.email
+      p.quicksandlight
+        | N° Entreprise #{current_user.company.company_code}
+  .grey-card.p-4
+    .grey-card-links
+      p.quicksandlight.pt-3
+        = link_to admin_employee_events_path do
+          | <i class="far fa-calendar-alt"></i>  Planning de mon Entreprise
+      p.quicksandlight
+        = link_to admin_employee_rooms_path do
+          | <i class="fas fa-home"></i>  Gérer mes salles
+      p.quicksandlight
+        = link_to admin_employee_print_path do
+          | <i class="fas fa-print"></i>  Imprimer le planning du jour
+      p.quicksandlight
+        = link_to admin_employee_invoices_path do
+          | <i class="far fa-file-alt"></i>  Consulter mes Factures
+  .grey-card.p-4
+    .grey-card-links
+      p.quicksandlight.pt-3
+        = link_to new_employee_attendee_path do
+          | <i class="fas fa-plus"></i>  Réserver une prestation
+      p.quicksandlight
+        = link_to employee_events_path do
+          | <i class="far fa-calendar-alt"></i>  Mes Prestations
+      p.quicksandlight
+        = link_to employee_users_edit_path(current_user) do
+          | <i class="fas fa-pencil-alt text-primary"></i>  Modifier mes informations

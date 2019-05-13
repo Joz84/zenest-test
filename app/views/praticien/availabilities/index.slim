@@ -1,0 +1,20 @@
+== render 'praticien/toolbar_praticien'
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Demande de Disponibilités à valider
+    == render "availabilities", availabilities: @availabilities, status: "pending"
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Demande de Disponibilités en attente de retour Zenest
+    == render "availabilities", availabilities: @availabilities, status: "available"
+/   .m-3
+/     h6.quicksandlight.grey-card-head Demande de Disponibilités validées
+/     == render "availabilities", availabilities: @availabilities, status: "approved"
+/ .grey-card.p-1
+/   .m-3
+/     h6.quicksandlight.grey-card-head Demande de Disponibilités non validées
+/     == render "availabilities", availabilities: @availabilities, status: "declined"
+/   .m-3
+/     h6.quicksandlight.grey-card-head Demande de Disponibilités refusées par vos soins
+/     == render "availabilities", availabilities: @availabilities, status: "unavailable"

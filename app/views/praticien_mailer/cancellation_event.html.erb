@@ -1,0 +1,7 @@
+  <p>Bonjour <%= @praticien.first_name %>,</p>
+  <p>Nous avons le regret de vous informer de l'annulation de votre prestation : <%= l(@event.start_date, format: :long) %> de <%= l(@event.start_date, format: :hour_details) %> à <%= l(@event.end_date, format: :hour_details) %> en <%= @event.massage_category.name.capitalize %>
+
+  <p><strong><%= link_to 'Voir mon planning', praticien_events_url, :target => "_blank" %></strong></p>
+
+  <p>Belle journée,</p>
+  <p>La Zenesteam</p>

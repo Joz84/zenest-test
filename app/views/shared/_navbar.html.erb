@@ -1,0 +1,62 @@
+<div class="navbar-mihivai navbar-height">
+  <!-- Logo -->
+  <a href="/" class="navbar-mihivai-brand">
+    <%= image_tag "logo_zenest.jpg", class: 'zoom', alt: "Entreprise de massage en entreprise" %>
+  </a>
+
+  <div class="d-none d-xl-block">
+    <div class="d-flex align-items-center justify-content-between">
+      <p class="navbar-mihivai-item font-14px text-primary m-0">+33 (0)9 86 70 37 36</p>
+      <% if !user_signed_in? %>
+        <%= link_to "DEMANDEZ UN DEVIS",  new_contact_path, class: "navbar-mihivai-item navbar-mihivai-link letter-spacing" %>
+        <%= link_to "NOTRE OFFRE", "/#offer", class: "navbar-mihivai-item navbar-mihivai-link letter-spacing" %>
+      <% end %>
+      <%= link_to "ZENESTBLOG", blog_index_path, class: "navbar-mihivai-item navbar-mihivai-link letter-spacing" %>
+      <% if user_signed_in? %>
+        <% if policy([:admin_employee, Event]).index? %>
+          <%= link_to "MON DASHBOARD", admin_employee_events_path , class: "navbar-mihivai-item navbar-mihivai-link letter-spacing" %>
+        <% else %>
+          <%= link_to "MON DASHBOARD", current_user.employee? ? new_employee_attendee_path : praticien_events_path , class: "navbar-mihivai-item navbar-mihivai-link letter-spacing" %>
+        <% end %>
+        <%= link_to t(".sign_out", default: "SE DÉCONNECTER"), destroy_user_session_path, method: :delete , class: "navbar-mihivai-item navbar-mihivai-link"%>
+
+      <% else %>
+        <%= link_to t(".sign_in", default: "CONNEXION/INSCRIPTION"), new_user_session_path , class: "navbar-mihivai-item navbar-mihivai-link"%>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="d-block d-xl-none">
+    <div class="navbar-dropdown">
+      <input id="toggle" type="checkbox"/>
+      <label class="hamburger" for="toggle">
+        <div class="top"></div>
+        <div class="meat"></div>
+        <div class="bottom"></div>
+      </label>
+
+      <div class="nav">
+        <div class="nav-wrapper">
+          <nav class= "d-flex flex-column">
+            <%= link_to "Accueil", root_path, class: "navbar-link letter-spacing" %>
+            <%= link_to "Zenestblog", blog_index_path, class: "navbar-link letter-spacing" %>
+            <%= link_to "Zenesteam", "/", class: "navbar-link letter-spacing" %>
+            <% if user_signed_in? %>
+              <% if current_user.admin_employee? %>
+                <%= link_to "Mon Dashboard", admin_employee_events_path , class: "navbar-link letter-spacing" %>
+              <% else %>
+                <%= link_to "Mon Dashboard", current_user.employee? ? employee_events_path : praticien_events_path , class: "navbar-link letter-spacing" %>
+              <% end %>
+              <%= link_to "Se Déconnecter", destroy_user_session_path, class: "navbar-link letter-spacing", method: :delete %>
+            <% else %>
+              <%= link_to "Créer un Compte", employee_users_sign_up_path, class: "navbar-link letter-spacing" %>
+              <%= link_to "Se Connecter", new_user_session_path,  class: "navbar-link letter-spacing" %>
+            <% end %>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class='navbar-height'></div>

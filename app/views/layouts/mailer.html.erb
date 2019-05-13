@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <div style="background-color:#FFF;max-width:600px;margin:0 auto;padding:0 30px">
+      <%= image_tag attachments['logo_zenest.jpg'].url, style: 'height:80px;', alt: 'Logo Zenest.pro' %>
+    </div>
+    <div style="background-color:#F5F5F5;max-width:600px;color:#3D7296;padding:30px;margin:0 auto;border-radius:5px;font-family:'Roboto', sans-serif;">
+      <%= yield %>
+    </div>
+  </body>
+</html>

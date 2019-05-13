@@ -1,0 +1,26 @@
+= content_for(:toolbar)
+  .grey-card.p-4
+    - if current_user.actable.has_photo?
+      = image_tag "home_picto/praticiens.png", class: 'square-avatar'
+    - else
+      = cl_image_tag current_user.actable.photo, class: 'avatar circle-avatar'
+    h5.p-2 = current_user.name
+    .grey-card-user-details
+      p.quicksandlight.text-nowrap.text-truncate = current_user.email
+  .grey-card.p-4
+    .grey-card-links
+      p.quicksandlight.pt-3
+        = link_to praticien_events_path do
+          | <i class="far fa-calendar-alt"></i>  Mes Prestations
+      p.quicksandlight
+        = link_to praticien_availabilities_path do
+          | <i class="fas fa-plus"></i>  Accepter une Prestation
+      p.quicksandlight
+        = link_to praticien_invoices_path do
+          | <i class="far fa-file-alt"></i>  Consulter / Ajouter une Facture
+      p.quicksandlight
+        = link_to praticien_print_path do
+          | <i class="fas fa-print"></i>  Imprimer mon planning du jour
+      p.quicksandlight
+        = link_to praticien_users_edit_path(current_user) do
+          | <i class="fas fa-pencil-alt text-primary"></i>  Modifier mes informations

@@ -1,0 +1,21 @@
+meta_product_name: "Zenest.pro"
+meta_title: "Massage en entreprise - Zenest"
+meta_description: "Zenest offre un service de Bien-être en Entreprise avec des séances de Massages Assis et des Ateliers Collectifs de gestion du stress."
+meta_image: "https://www.zenest.pro/assets//home_picto/banner-ed247264abd9ad3a999a8270b295f8c99db4d1c6e2b6e3f840a38115405fde8a.jpg" # should exist in `app/assets/images/`
+twitter_account: "https://twitter.com/ZenestPro"   # required for Twitter Cards
+meta_keywords: "Zenest, Massage, Pro"
+meta_logo: "http://static1.squarespace.com/static/5910837315d5dbcc2c536309/t/5915e27b59cc6830f44c410e/1494606461636/bbb.png?format=1500w" # should exist in `app/assets/images/`
+meta-url: "https://www.zenest.pro/"
+meta-url-fb:  https://www.facebook.com/zenest.pro/
+meta-url-instagram: https://www.instagram.com/zenest.pro/
+meta-url-linkedin: https://www.linkedin.com/company/zenest
+meta-twitter: "@ZenestApp"
+meta-fb-app-id: ''
+meta-site: zenest.pro
+meta-company: TODO Entreprise
+meta-company-status: TODO statut de l'entreprise
+meta-company-registration: TODO dispensée d'immatriculation au Registre du Commerce et des Sociétés
+meta-company-address: TODO au 1 place de la Bourse, 33000 Bordeaux, France
+meta-publisher: TODO Prénom NOM
+meta-email: contact@zenest.com
+meta-phone: "+33986703736"

@@ -1,0 +1,18 @@
+function refreshRoom(roomHTML) {
+  const room = document.getElementById('room<%= @room.id %>');
+  room.insertAdjacentHTML('afterend', roomHTML);
+  room.remove();
+}
+
+function refreshModal(title, body) {
+  const modal = document.getElementById('roomModal');
+  modal.querySelector('.modal-body').innerHTML = body;
+  modal.querySelector('.modal-title').innerHTML = title;
+};
+
+<% if @room.errors.any? %>
+  refreshModal('<%= @room.name %>','<%= j render "admin_employee/rooms/form", room: @room %>');
+<% else %>
+  refreshRoom('<%= j render "admin_employee/rooms/room", room: @room %>');
+  $('#roomModal').modal('hide');
+<% end %>

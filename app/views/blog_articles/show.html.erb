@@ -1,0 +1,22 @@
+<% content_for :meta_title, meta_title_blog(@article) %>
+<% content_for :meta_description, meta_description_blog(@article) %>
+<% content_for :meta_keywords, meta_keywords_blog(@article) %>
+<% content_for :meta_image, cl_image_path(@article.photo.url) %>
+
+<div class="page-min-height">
+  <div class="banner banner-half-screen text-white d-flex text-center justify-content-center align-items-end" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(<%= cl_image_path @article.photo unless @article.photo.url.nil? %>);">
+    <div class="banner-content d-flex flex-column-reverse align-items-center justify-content-center w-100 h-100">
+      <div>
+        <h1><%= @article.title %></h1>
+        <p class="quicksandlight"><%= "de " + @article.author.name unless @article.author.nil? %> publié le
+        <%= @article.published_at.strftime("%d/%m/%Y") %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3 quicksandlight text-justify">
+    <p class="text-right text-primary"><%= @article.blog_tags.display_tags %></p>
+    <p><%= @article.content.html_safe %></p>
+  </div>
+</div>

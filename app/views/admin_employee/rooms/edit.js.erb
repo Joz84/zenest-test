@@ -1,0 +1,8 @@
+function refreshModal(title, body) {
+  const modal = document.getElementById('roomModal');
+  modal.querySelector('.modal-body').innerHTML = body;
+  modal.querySelector('.modal-title').innerHTML = title;
+};
+
+refreshModal('<%= @room.name %>','<%= j render "admin_employee/rooms/form", room: @room %>');
+$('#roomModal').modal('show');

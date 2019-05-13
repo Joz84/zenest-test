@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Planning Zenest</title>
+      <%= wicked_pdf_stylesheet_link_tag "application" -%>
+      <%= wicked_pdf_javascript_include_tag "number_pages" %>
+  </head>
+  <body onload='number_pages'>
+    <div class="pdf-wrapper">
+      <div class="flex-box jc-space-between ai-center">
+        <div class="pdf-logo"></div>
+      </div>
+
+      <%= yield %>
+
+    </div>
+  </body>
+</html>

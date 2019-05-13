@@ -1,0 +1,11 @@
+tr
+  | <td class="d-none d-sm-table-cell" scope="row">#{event.id}</td>
+  | <td>#{event.start_date.strftime("Le %d/%m/%Y à %Hh%M")}</td>
+  | <td class="d-none d-sm-table-cell">#{group_or_individual_event(event)}</td>
+  | <td class="d-none d-sm-table-cell">#{event.massage_category.name} <br>avec #{event.praticien.name}</td>
+  | <td>#{event.room&.name || event.company.name}</td>
+  | <td class="d-none d-sm-table-cell"><i class="#{attendee_status_icon(event.attendee_for_current_user(current_user))} text-#{attendee_status_color(event.attendee_for_current_user(current_user))}"></i></td>
+  | <td data-toggle="modal" data-target="#eventModalEmployee-#{event.id}" class="text-primary cursor-pointer">
+  |    Voir
+  | </td>
+== render 'modal_event', event: event, id: event.id

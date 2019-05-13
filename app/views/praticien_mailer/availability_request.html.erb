@@ -1,0 +1,12 @@
+<p>Bonjour <%= @user.first_name %>,</p>
+
+<p>Tu as une nouvelle demande de prestation :</p>
+
+<p><%= @availability.requirement.massage_category.name %> le <%= l(@availability.calendar_day.date, format: :long) %> à <%= @company.address %> <%= @company.city %> <%= @company.zipcode %> (<%= humanized_money @availability.requirement.amount %> en tout) </p>
+
+<p>Si tu es disponible, merci de cliquer <strong><%= link_to 'ici', praticien_availabilities_url, :target => "_blank" %></strong></p>
+<p>Nous allons te prévenir rapidement si tu as été retenu pour cette prestation 😊
+</p>
+
+<p>Belle journée,</p>
+<p>La Zenesteam</p>

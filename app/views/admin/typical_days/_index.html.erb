@@ -1,0 +1,52 @@
+<%= stylesheet_pack_tag 'bootstrap'%>
+
+<div class="admin-wrapper">
+  <div class="admin-global-links">
+    <button type="button" class="admin-btn-success" data-toggle="modal" data-target="#newModal">Nouveau</button>
+    <%= render "form_modal", default_event: DefaultEvent.new, url: admin_default_events_path, modal_name: "new", event_group: event_group %>
+    <%= link_to "Selectionner les jours", admin_multidatepicker_path(event_group_id: event_group.id), class: "admin-btn-success" %>
+  </div>
+
+  <hr>
+  <% morning_default_events.group_by{ |e| e.start_date.strftime("%Hh%M")}.each do |start_date, default_events_by_slot| %>
+    <div class="admin-cards">
+      <% default_events_by_slot.each do |default_event| %>
+        <div class="admin-card">
+          <h3><%= default_event.title %></h3>
+          <div><%= "#{default_event.start_date.strftime("%Hh%M")} <i class='fas fa-arrow-right'></i> #{default_event.end_date.strftime("%Hh%M")}".html_safe %></div>
+          <div class="admin-links">
+            <button type="button" class="" data-toggle="modal" data-target="#edit<%= default_event.id %>Modal"><i class="far fa-edit"></i></button>
+            <%= link_to admin_default_event_path(default_event), method: :delete, data: { confirm: 'Êtes vous sûr de vouloir supprimer ?' } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </div>
+        <%= render "form_modal", default_event: default_event, url: admin_default_event_path(default_event), modal_name: "edit#{default_event.id}", event_group: event_group %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <hr>
+
+  <% afternoon_default_events.group_by{ |e| e.start_date.strftime("%Hh%M")}.each do |start_date, default_events_by_slot| %>
+    <div class="admin-cards">
+      <% default_events_by_slot.each do |default_event| %>
+        <div class="admin-card">
+          <h3><%= default_event.title %></h3>
+          <div><%= "#{default_event.start_date.strftime("%Hh%M")} <i class='fas fa-arrow-right'></i> #{default_event.end_date.strftime("%Hh%M")}".html_safe %></div>
+          <div class="admin-links">
+            <button type="button" class="" data-toggle="modal" data-target="#edit<%= default_event.id %>Modal"><i class="far fa-edit"></i></button>
+            <%= link_to admin_default_event_path(default_event), method: :delete, data: { confirm: 'Êtes vous sûr de vouloir supprimer ?' } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </div>
+        <%= render "form_modal", default_event: default_event, url: admin_default_event_path(default_event), modal_name: "edit#{default_event.id}", event_group: event_group %>
+      <% end %>
+    </div>
+  <% end %>
+
+
+</div>
+
+<%= javascript_pack_tag 'application' %>

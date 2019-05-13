@@ -1,0 +1,25 @@
+.blue-frame {
+  background-image: image-url('home_picto/blue-background.png');
+  background-size: 100%;
+  padding: 30px;
+  background-repeat: no-repeat;
+  width: 80vw;
+  max-width: 1000px;
+  margin: 6% auto;
+}
+.video-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 1%;
+  height: 0;
+  overflow: hidden;
+}
+.video-frame iframe,
+.video-frame object,
+.video-frame embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

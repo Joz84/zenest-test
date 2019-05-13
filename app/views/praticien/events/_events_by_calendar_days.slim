@@ -1,0 +1,29 @@
+- if events[time_slot].present?
+  table-responsive
+    table.table.quicksandlight
+      thead
+        tr
+          / | <th class="d-none d-sm-table-cell" scope="col">#</th>
+          | <th scope="col"><i class="far fa-clock"></i></th>
+          | <th scope="col"><i class="fas fa-home"></th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="fas fa-users"></th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="far fa-hand-paper"></th>
+          / | <th class="d-none d-sm-table-cell" scope="col"><i class="fas fa-euro-sign"></i></th>
+          | <th scope="col"><i class="far fa-eye"></i></th>
+      tbody
+        - events[time_slot].each do |key, events_list|
+          tr
+            / | <td class="d-none d-sm-table-cell" scope="row">#{calendar_day.id}</td>
+            | <td>#{key.first.date.strftime("%d/%m/%Y")}</td>
+            | <td>#{key.last.name}</td>
+            | <td class="d-none d-sm-table-cell">#{events_list.size} prestation(s)</td>
+            | <td class="d-none d-sm-table-cell">#{massage_category_name_for(events_list)}</td>
+            | <td data-toggle="modal" data-target="#eventModalPraticien-#{key.first.id}" class="text-primary">
+            |    Voir
+            | </td>
+          == render 'modal_events', events: events_list, calendar_day: key.first, id: key.first.id
+- else
+  p.quicksandlight Aucune Prestation enregistrée
+
+
+

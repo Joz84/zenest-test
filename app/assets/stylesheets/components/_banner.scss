@@ -1,0 +1,42 @@
+.banner {
+  width: 100vw;
+  background-size: cover !important;
+}
+
+.banner-full-screen {
+  height: calc(100vh - 70px);
+}
+
+.banner-half-screen {
+  height: 40vh;
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+}
+
+.banner-content {
+  h1 {
+    text-shadow: 0.5px 0.5px 3px rgba(10,10,10,0.3);
+    width: 100%;
+    max-width: 700px;
+    font-size: 50px;
+  }
+  .banner-details {
+    margin-top: calc(30vh - 110px);
+  }
+}
+
+
+@media (max-width: 767px) {
+  .banner {
+    background-position: 10% !important;
+    h1 {
+    font-size: 32px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+  }
+}

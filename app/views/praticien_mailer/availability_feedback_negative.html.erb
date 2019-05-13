@@ -1,0 +1,9 @@
+<p>Bonjour <%= @user.first_name %>,</p>
+
+<p>Malheureusement, tu n'as pas été choisi pour cette prestation ! <br> Ce n'est que partie remise, la prochaine fois sera la bonne !
+</p>
+
+<p><%= @requirement.massage_category.name %> le <%= l(@requirement.calendar_day.date, format: :long) %> </p>
+
+<p>Belle journée,</p>
+<p>La Zenesteam</p>

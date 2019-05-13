@@ -1,0 +1,11 @@
+<div class="wrapper wrapper-white text-center py-5 position-relative">
+  <%= image_tag "home_picto/zenest_right.png", alt: "Oiseau" ,class: "position-img-birds-right-start position-absolute position-img-birds-right2 d-none d-sm-block" %>
+  <div class="container">
+    <p class="h2 text-primary">Nos Praticiens</p>
+    <p>Plus de 300 praticiens dans toute la France.</p>
+    <p class="quicksandlight mx-auto w-75 text-dark font-14px mb-3">Nos praticiens sont tous diplômés des meilleures écoles, expérimentés et méticuleusement recrutés afin que vous puissiez bénéficier de prestations de qualités.</p>
+    <p class='quicksandlight m-auto w-75 text-dark font-14px'>Nos chers praticiens font partie intégrante de la grande famille de Zenest. Ils transmettent aux collaborateurs : sérénité, productivité, concentration, épanouissement, équilibre, détente, bonne humeur, atténuations des tensions, et bien d’autres encore, la liste est longue…</p>
+    <%= render 'shared/carousel', list: @praticiens.to_a, classes: 'd-block m-auto avatar circle-avatar', carousel_num: '2', padding: '' %>
+  </div>
+</div>
+

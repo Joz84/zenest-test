@@ -1,0 +1,13 @@
+<p>Bonjour,</p>
+
+<p>Une erreur de paiement s'est produite sur le site zenest.pro pour : </p>
+<ul>
+  <li>Personne concernée : <%= @attendee.employee.name %> de la compagnie <%= @attendee.employee.company.name %></li>
+  <li>La prestation : <%= @attendee.event.massage_category.name %> de <%= l(@attendee.event.start_date, format: :hour_details) %> à <%= l(@attendee.event.end_date, format: :hour_details) %></li>
+</ul>
+
+<p>Les détails de l'erreur sont ci-dessous :</p>
+<p><%= @error %></p>
+
+<p>N'hésitez pas à consulter stripe.com pour plus d'informations,</p>
+<p>La Zenesteam</p>

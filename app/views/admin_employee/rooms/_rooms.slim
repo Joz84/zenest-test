@@ -1,0 +1,13 @@
+- if rooms.present?
+  table-responsive
+    table.table.quicksandlight
+      thead
+        tr
+          | <th class="d-none d-sm-table-cell" scope="col">Nom</th>
+          | <th class="d-none d-sm-table-cell" scope="col">Capacité</th>
+      tbody id='list-rooms'
+        - rooms.each do |room|
+          == render 'admin_employee/rooms/room', room: room
+- else
+  p.quicksandlight Aucune Salle enregistrée
+== render 'modal_edit_room'

@@ -1,0 +1,23 @@
+<div class="modal fade" id="attendeeModal" tabindex="-1" role="dialog" aria-labelledby="attendeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="attendeeModalLabel">
+          Prestation du <span id="attendee-modal-date"></span>
+        </h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <%= simple_form_for @attendee, url: employee_attendees_path, method: :post, html: {id: "payment-form"} do |f| %>
+      <div class="modal-body">
+        <div id="mhv-collapse" class="pt-0 pb-5 px-4">
+          <h4 class="mhv-collapse-header">Choix du crénaux et du practicien</h4>
+          <div id="attendee-modal-massage-categories"></div>
+          <div class="mhv-collapse-payment mhv-h0"></div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

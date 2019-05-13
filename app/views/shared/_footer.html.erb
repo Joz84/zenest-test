@@ -1,0 +1,52 @@
+<footer>
+  <div class="wrapper wrapper-blue">
+    <div class="container">
+      <% if current_page?(root_path) %>
+        <div class="row mt-5">
+          <div class="col-12 col-md-4 text-center mb-4">
+            <p class= 'font-20px mb-2'>À propos de Zenest</p>
+            <hr class='bg-white w-50 m-auto'>
+            <ul class='p-0 mt-4 font-14px letter-spacing quicksandlight'>
+              <li class='mt-2'><%= link_to "CGV", cgv_path, rel: 'nofollow', class: "link-opacity text-white" %></li>
+              <li class='mt-2'><%= link_to "Mentions légales", legal_path, rel: 'nofollow', class: "link-opacity text-white" %></li>
+              <li class='mt-2'><%= link_to "Charte de confidentialité", charte_path, rel: 'nofollow', class: "link-opacity text-white" %></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 mb-5">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <%= image_tag "home_picto/logo_white.png", height: '50px', alt: "Massage bien etre en entreprise" %>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="text-center">
+              <p class= 'font-20px mb-2'>Nous contacter</p>
+              <hr class='bg-white w-50 m-auto'>
+              <ul class="p-0 mt-3 font-14px letter-spacing quicksandlight">
+                <li>
+                  <a href="tel:+33986703736" class="link-opacity text-white"><i class="fa fa-phone mr-2"></i>+33 9 86 70 37 36</a>
+                </li>
+                <li class='mt-2'>
+                  <a href="mailto:contact@zenest.com" class="link-opacity text-white"><i class="fa fa-envelope mr-2"></i>contact@zenest.com</a>
+                </li>
+                <li class='mt-2'><i class="fas fa-map-marker-alt mr-2"></i>59 Boulevard Exelmans, 75016 Paris</li>
+              </ul>
+            </div>
+            <p class='text-center font-20px mb-2 mt-5'>Nous suivre</p>
+            <hr class='bg-white w-50 m-auto'>
+            <%= render 'shared/footer_icon' %>
+          </div>
+        </div>
+        <p class= "font-13px quicksandlight text-center mt-4">Tous droits réservés © 2019 - Zenest</p>
+        <p class="d-none">Webdesign: mihivai.com</p>
+        <% else %>
+        <div class="text-center">
+          <div class="card-picto-small m-auto">
+            <%= image_tag "home_picto/logo_white.png", class: 'mt-4', alt: "Massage bien etre en entreprise" %>
+          </div>
+        </div>
+        <p class= "font-13px quicksandlight text-center mt-4">Tous droits réservés © 2019 - Zenest</p>
+        <p class="d-none">Webdesign: mihivai.com</p>
+      <% end %>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,18 @@
+- if events[time_slot].present?
+  table-responsive
+    table.table.quicksandlight
+      thead
+        tr
+          | <th class="d-none d-sm-table-cell" scope="col">#</th>
+          | <th scope="col"><i class="far fa-clock"></i></th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="fas fa-users"></th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="far fa-hand-paper"></th>
+          | <th scope="col"><i class="fas fa-home"></th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="far fa-check-circle"></th>
+          | <th scope="col"><i class="far fa-eye"></i></th>
+      tbody
+        - events[time_slot].each do |event|
+          == render 'event', event: event
+- else
+  p.quicksandlight Aucune Prestation enregistrée
+

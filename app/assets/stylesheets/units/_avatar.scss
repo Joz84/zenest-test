@@ -1,0 +1,69 @@
+.square-avatar {
+  max-width: 60%;
+}
+.avatar {
+  border-radius: 50%;
+  max-width: 100%;
+}
+.company-avatar {
+  width: 60%;
+  @media (max-width: 991px) {
+    width: 75%;
+  }
+  @media (max-width: 767px) {
+    width: calc(100% + 20px);
+  }
+}
+.small-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.red-circle {
+  box-shadow: 0 0 0 2px white, 0 0 0 5px #eb4d3e;
+}
+
+.blue-circle {
+  box-shadow: 0 0 0 2px white, 0 0 0 5px $blue;
+}
+
+.green-circle {
+  box-shadow: 0 0 0 2px white, 0 0 0 5px #72E380;
+}
+
+.custom-radio {
+  img {
+    box-shadow: 0 0 0 2px white, 0 0 0 5px $green;
+    transition: box-shadow ease 200ms;
+    margin: 4px;
+  }
+  .img-checked {
+    box-shadow: 0 0 0 2px white, 0 0 0 5px $blue;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.circle-avatar {
+  height: 130px;
+  width: 130px;
+  padding: 5px;
+  object-fit: cover;
+}
+.img-carousel {
+  height: 130px;
+  max-width: 100%;
+}
+@media (max-width: 992px) {
+  .circle-avatar {
+  height: 100px;
+  width: 100px;
+  }
+  .img-carousel {
+  height: 100px;
+  }
+}
+

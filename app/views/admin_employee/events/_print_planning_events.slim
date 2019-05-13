@@ -1,0 +1,24 @@
+table-responsive
+  table.table.quicksandlight
+    thead
+      tr.pdf-tab-title
+        | <th scope="col">#</th>
+        | <th scope="col">Horaire</th>
+        | <th scope="col">Catégorie de Massage</th>
+        | <th scope="col">Nom du Praticien</th>
+        | <th scope="col">Groupe/Individuel</th>
+        | <th scope="col">Nb de participants</th>
+        | <th scope="col">Nom des participants</th>
+        | <th scope="col">Salle (si précisée)</th>
+
+    tbody
+      - events.each do |event|
+        tr
+          | <td>#{event.id}</td>
+          | <td>#{event.start_date.strftime("De %Hh%M")} #{event.end_date.strftime(" à %Hh%M")}</td>
+          | <td>#{event.massage_category.name}</td>
+          | <td>#{event.praticien.name.capitalize}</td>
+          | <td>#{group_or_individual_event(event)}</td>
+          | <td>#{event.attendees.confirmed.size}</td>
+          | <td>#{event.attendees.confirmed.name_list}</td>
+          | <td>#{event.room&.name || event.company.name}</td>

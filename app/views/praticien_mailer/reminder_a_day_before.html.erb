@@ -1,0 +1,17 @@
+<p>Bonjour <%= @user.first_name %>,</p>
+<p>N'oublie pas que DEMAIN tu as des prestations en entreprise avec Zenest chez <%= @company.name %> au <%= @company.full_address %> :</p>
+
+<ul>
+  <% @events.each do |event| %>
+    <li><%= event.massage_category.name %> de <%= l(event.start_date, format: :hour_details) %> à <%= l(event.end_date, format: :hour_details) %> <%= "(#{event.room.name})" if event.room.present? %></li>
+    <!-- <li>Sophrologie de 13h00 à 14h00 (salle C35)</li> -->
+  <% end %>
+</ul>
+
+<p>Tu peux imprimer <strong><%= link_to 'ici', praticien_print_url, :target => "_blank" %></strong> ton planning de demain.</p>
+<p>Contact sur place : <%= @company.admin.name %> <%= @company.admin.phone unless @company.admin.phone.nil? %></p>
+
+<p>PS : merci d'arriver au moins 30 min avant le début de la séance le temps de t'installer tranquillement.</p>
+
+<p>Belle journée,</p>
+<p>La Zenesteam</p>

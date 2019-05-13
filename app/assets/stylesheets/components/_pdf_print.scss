@@ -1,0 +1,131 @@
+.pdf-wrapper {
+  h1 {
+    padding: 0px;
+    margin: 0px;
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  h2 {
+    padding: 0px;
+    margin: 0px;
+    // color: #57bade;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+.pdf-logo {
+  background-image: asset-data-url('logo_zenest.jpg');
+  background-size: cover !important;
+  width: 240px;
+  height: 120px;
+}
+
+.pdf-text-right {
+  text-align: right;
+}
+
+.pdf-text-center {
+  text-align: center;
+}
+
+.pdf-tab-header {
+  // background-color: $green;
+  // border: solid 1px $black;
+  font-weight: bold;
+  p {
+    padding: 5px 0px;
+  }
+}
+
+
+.pdf-tab {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  table {
+    width: 100%;
+  }
+  p {
+    padding: 5px;
+    font-size: 16px;
+  }
+  td {
+    font-size: 12px;
+    text-align: center;
+  }
+  th {
+    font-size: 16px;
+    color: #57bade;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.pdf-tab-content {
+  border-bottom: solid 1px black;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+  p {
+    padding: 5px;
+  }
+}
+.pdf-tab-title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.pdf-bg-grey {
+  background-color: grey;
+}
+.pdf-rib {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  .div-child {
+    flex: 1 0 auto;
+  }
+}
+.margin-bottom-20px {
+  margin-bottom: 20px;
+}
+
+
+.flex-column {
+  flex-direction: column;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-baseline {
+  align-items: baseline;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-space-around {
+  justify-content: space-around;
+}
+
+.jc-space-between {
+  justify-content: space-between;
+}
+
+.jc-flex-start {
+  justify-content: flex-start;
+}
+

@@ -1,0 +1,8 @@
+== render 'admin_employee/toolbar_admin_employee'
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Bilan de mes Factures
+    == render "invoices/invoices", invoices: @invoices
+
+

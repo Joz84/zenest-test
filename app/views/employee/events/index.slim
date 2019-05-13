@@ -1,0 +1,11 @@
+= employee_dashboard_path(current_user.actable)
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Mes prestations à venir
+    == render "events", events: @events, time_slot: "future"
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Mes prestations passées
+    == render "events", events: @events, time_slot: "past"
+

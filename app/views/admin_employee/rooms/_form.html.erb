@@ -1,0 +1,8 @@
+<%= simple_form_for([:admin_employee, room], remote: true)  do |f|  %>
+  <div class="row">
+    <div class="col-sm-5"><%= f.input :name, label: false, placeholder: t('name') %></div>
+    <div class="col-sm-3"><%= f.input :capacity, label: false, placeholder: t('capacity') %></div>
+    <div class="col-sm-4"><%= f.button :submit, 'Soumettre', class: 'btn-primary border-radius-100px' %></div>
+  </div>
+<% end %>
+

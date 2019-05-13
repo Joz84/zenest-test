@@ -1,0 +1,15 @@
+== render 'admin_employee/toolbar_admin_employee'
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Ajouter une Salle
+    .mt-3
+      div id="new-room"
+        == render 'admin_employee/rooms/form', room: @room
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Salles disponibles
+    div id='rooms'
+      == render 'admin_employee/rooms/rooms', rooms: @rooms
+
+

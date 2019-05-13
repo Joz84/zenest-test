@@ -1,0 +1,11 @@
+<div class="card text-center position-relative">
+  <%= link_to "", blog_path(blog_article), class: "link_invisible" %>
+  <% unless blog_article.photo.url.nil? %>
+    <%= default_photo(blog_article.photo, 'card-img-top', blog_article.title)  %>
+  <% end %>
+  <div class="card-body">
+    <h3 class="card-title"><%= blog_article.title %></h3>
+    <p class="card-text quicksandlight"><%= blog_article.content.truncate(200, separator: ' ').html_safe  %></p>
+    <small class="text-muted">Publié le <%= blog_article.published_at.strftime('%d/%m/%Y') %></small> <br>
+  </div>
+</div>

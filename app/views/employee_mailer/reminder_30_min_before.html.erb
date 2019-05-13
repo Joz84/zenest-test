@@ -1,0 +1,11 @@
+<p>Bonjour <%= @employee.first_name %>,</p>
+<p>Dans 30 min Mathilde vous accueillera pour une prestation Zenest de : </p>
+
+<ul>
+  <li><%= @attendee.event.massage_category.name.capitalize %> de <%= l(@attendee.event.start_date, format: :hour_details) %> à <%= l(@attendee.event.end_date, format: :hour_details) %> avec <%= @attendee.event.praticien.first_name.capitalize %> <%= "(#{@attendee.event.room.name})" if @attendee.event.room.present? %></li>
+</ul>
+
+<p>Mode Zenest : Activé</p>
+
+<p>Bon voyage 😊</p>
+<p>La Zenesteam</p>

@@ -1,0 +1,20 @@
+<%= form_value.fields_for :user do |u| %>
+      <div class="col-sm-6">
+        <%= u.input :first_name, label: false, placeholder: t('first_name') %>
+      </div>
+      <div class="col-sm-6">
+        <%= u.input :last_name, label: false, placeholder: t('last_name') %>
+      </div>
+      <div class="col-12">
+        <%= u.input :email, label: false, placeholder: 'Email *' %>
+      </div>
+      <div class="col-sm-6">
+        <%= u.input :password, label: false, placeholder: t('password_required') %>
+      </div>
+      <div class="col-sm-6">
+        <%= u.input :password_confirmation, label: false, placeholder: t('password_confirmation_required') %>
+      </div>
+      <div class="col-sm-6">
+        <%= u.input :phone, label: false, placeholder: t('phone') %>
+    </div>
+<% end %>

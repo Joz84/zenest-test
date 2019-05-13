@@ -1,0 +1,9 @@
+function refreshRooms(innerHTML) {
+  const rooms = document.getElementById('rooms');
+  rooms.innerHTML = innerHTML;
+}
+<% if @rooms.count > 0 %>
+  document.getElementById('room<%= @room.id %>').remove();
+<% else %>
+  refreshRooms('<%= j render "admin_employee/rooms/rooms", rooms: @rooms %>');
+<% end %>

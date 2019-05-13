@@ -1,0 +1,33 @@
+<!-- Modal -->
+<div class="modal fade" id="<%= modal_name %>Modal" tabindex="-1" role="dialog" aria-labelledby="<%= modal_name %>ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%= modal_name %>ModalLabel">Créer un nouvel événement</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= simple_form_for default_event, url: url do |f| %>
+      <div class="modal-body">
+          <%= f.input :event_group_id, input_html: { value: event_group.id }, as: :hidden %>
+          <%= f.input :start_date, as: :time %>
+          <%= f.association :massage_category, default: default_event.massage_category || event_group.massage_category  %>
+          <%= f.input :description, input_html: { value: default_event.description || event_group.description } %>
+          <%= f.input :price, input_html: { value: default_event.price || event_group.price } %>
+          <%= f.input :title, input_html: { value: default_event.title || event_group.title } %>
+          <%= f.input :max_attendees, input_html: { value: default_event.max_attendees || event_group.max_attendees } %>
+          <%= f.input :min_attendees, input_html: { value: default_event.min_attendees || event_group.min_attendees } %>
+          <%= f.input :duration %>
+          <% if default_event.id.nil? %>
+            <%= f.input :massage_by_slot, input_html: { value: 1 } %>
+            <%= f.input :duplication, input_html: { value: 1 } %>
+          <% end %>
+      </div>
+      <div class="modal-footer">
+          <%= f.button :submit, "Enregister" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

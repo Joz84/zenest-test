@@ -1,0 +1,24 @@
+<%= render "shared/banner_transition_blue", title: "", title_span: "Le concept du Bien-être \"ON DEMAND\"", text: "Nous proposons des prestations de bien-être sur mesure pour vos employés, clients et partenaires avec plus de 300 praticiens qui se déplacent dans votre entreprise ou sur le lieu de votre évènement partout en France." %>
+
+<div class="wrapper position-relative p-5">
+  <%= image_tag  'home_picto/zenest_left.png',  alt: "Oiseau", class: "position-absolute position-img-birds-left-start position-img-birds-left d-none d-sm-block"%>
+  <%= image_tag 'home_picto/round_left1.png', class: "position-absolute position-circle-left-1", alt: 'Rond rouge' %>
+  <%= image_tag 'home_picto/round_right1.png', class: "position-absolute position-circle-right-1", alt: 'Rond vert' %>
+  <div class="d-flex flex-wrap justify-content-center container">
+    <div class="card-picto-medium text-center">
+      <%= image_tag "home_picto/etape1.png", alt: 'Contact avec zenest', class: 'zoom' %>
+      <p class= "text-primary font-number">1</p>
+      <p class="text-dark">Nous définissons le projet de qualité de vie au travail le plus adapté à vos besoins.</p>
+    </div>
+    <div class="card-picto-medium text-center">
+      <%= image_tag "home_picto/etape2.png", alt: 'Masseur en entreprise', class: 'zoom' %>
+      <p class= "text-primary font-number">2</p>
+      <p class="text-dark">Attendez sereinement, nous arrivons avec tout l’équipement nécessaire.</p>
+    </div>
+    <div class="card-picto-medium text-center">
+      <%= image_tag "home_picto/etape3.png", alt: 'Massage sur chaise des salariés', class: 'zoom' %>
+      <p class= "text-primary font-number">3</p>
+      <p class="text-dark">Nos praticiens mettent en place une petite bulle de bien-être au sein de votre entreprise.</p>
+    </div>
+  </div>
+</div>

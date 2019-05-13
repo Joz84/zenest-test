@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag 'application' %>
+  </head>
+  <body>
+    <div class="pdf-wrapper">
+      <div class="flex-box jc-space-between ai-center">
+        <div class="pdf-logo"></div>
+      </div>
+
+      <div class="pdf-text-center ">
+        <h1 class="quicksandlight">Planning de ma journée du <%= @date %></h1>
+      </div>
+
+      <div class="pdf-tab">
+        <%= render 'print_planning_events', events: @events %>
+      </div>
+
+      <div class="pdf-tab">
+        <p>
+          <strong>Prestation(s) dans la/les société(s) : </strong>
+        </p>
+        <% @events.distinct(:company).each do |event| %>
+          <div class="margin-bottom-20px">
+            <p>
+               <%= event.company.name %><br>
+               <%= event.company.full_address %> <br>
+               Contact : <%= event.company.admin.name unless event.company.admin.nil? %> <%= event.company.admin.phone unless (event.company.admin.nil? || event.company.admin.phone.nil?) %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </body>
+</html>

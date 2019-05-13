@@ -1,0 +1,11 @@
+tr
+  | <td class="d-none d-sm-table-cell" scope="row">#{attendee.id}</td>
+  | <td class="d-none d-sm-table-cell">#{attendee.employee&.matricule}</td>
+  | <td>#{attendee.employee.name}</td>
+  | <td><i class="#{attendee_status_icon(attendee)} text-#{attendee_status_color(attendee)}"></i></td>
+  - if policy([:admin_employee, attendee]).edit? && attendee.confirmed?
+    | <td>#{link_to "Annuler", admin_employee_attendee_path(attendee, status: 1), method: :patch}</td>
+  - elsif policy([:admin_employee, attendee]).edit? && attendee.cancelled?
+    | <td>#{link_to "Re-réserver", admin_employee_attendee_path(attendee, status: 0), method: :patch}</td>
+  - else
+    | <td>Modification non possible</td>

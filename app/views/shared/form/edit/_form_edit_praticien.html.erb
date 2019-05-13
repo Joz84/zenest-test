@@ -1,0 +1,23 @@
+<div class="grey-card-head m-3"><h6 class= 'quicksandlight'><%= t('edit_account') %></h6></div>
+<div class="m-3">
+  <%= simple_form_for(@praticien, url: praticien_users_path(current_user), html: { method: :put }) do |f| %>
+    <div class="row" class="text-align">
+      <%= render 'shared/form/edit/form_edit_user', form_value: f %>
+      <div class="col-12">
+        <%= f.input :photo, label: false %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+      <hr class='w-75 mx-auto bg-muted mb-4'>
+      <%= f.fields_for :user do |u| %>
+        <div class="col-12 offset-md-3 col-md-6">
+          <%= u.input :current_password,
+                    label: false,
+                    hint: true,
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+        </div>
+      <% end %>
+      <%= f.submit t('edit_account'), class: "blue-button border-0 mx-auto mt-3" %>
+    </div>
+  <% end %>
+</div>

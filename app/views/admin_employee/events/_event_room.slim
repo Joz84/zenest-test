@@ -1,0 +1,6 @@
+= simple_form_for [:admin_employee, event], method: :put, html: { class: 'form-inline d-flex' } do |f|
+  = f.error_notification
+  = f.input_field :room_id, label:false, as: :select, collection: Room.filtered_by_company(current_user), class:  'flex-grow-1 select2 form-control'
+  = f.button :button, class:'btn-primary border-radius-100px m-2' do
+    | <i class='fas fa-check'></i>
+

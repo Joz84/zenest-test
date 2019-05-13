@@ -1,0 +1,29 @@
+= content_for(:toolbar)
+  .grey-card.p-4
+    = cl_image_tag current_user.company.logo, class: 'square-avatar'
+    h5.p-2 = current_user.name
+    .grey-card-user-details
+      p.quicksandlight = current_user.email
+      p.quicksandlight
+        | N° Entreprise #{current_user.company.company_code}
+  .grey-card.p-4
+    .grey-card-links
+      p.quicksandlight.pt-3
+        = link_to edit_user_registration_path(current_user) do
+          | <i class="fas fa-pencil-alt text-primary"></i>  Modifier mes informations
+      p.quicksandlight
+        = link_to new_attendee_path do
+          | <i class="fas fa-plus"></i>  Réserver une prestation
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head.mb-4 Réserver une prestation
+
+
+
+
+
+
+    .container
+      | <div id="calendar" data-events="#{ @massage_categories }"></div>
+  == render 'employee/attendees/modal_attendees'

@@ -1,0 +1,13 @@
+tr
+  | <td class="d-none d-sm-table-cell" scope="row">#{invoice.id}</td>
+  | <td class="d-none d-sm-table-cell">#{invoice.reference}</td>
+  | <td class="d-none d-sm-table-cell">#{invoice.title}</td>
+  | <td>#{invoice.date.strftime("%d/%m/%Y")}</td>
+  | <td>#{ humanized_money_with_symbol(invoice.amount)}</td>
+  / | <td>
+  / = link_to("Télécharger", cl_private_download_url(invoice.pdf.url, :pdf, :attachment => true))
+  / | </td>
+  | <td class="d-none d-sm-table-cell" data-toggle="modal" data-target="#invoiceModal-#{invoice.id}" class="text-primary">
+  |    Voir
+  | </td>
+== render 'invoices/modal_invoice_pdf', invoice: invoice, id: invoice.id

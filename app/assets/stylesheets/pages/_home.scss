@@ -1,0 +1,207 @@
+// All Scss must be ordered by tag then class then id and by alphabetic order
+.position-background-bird {
+  right: 50%;
+  bottom: 50%;
+  width: 90%;
+  transform: translate(50%, 45%);
+  opacity: 0.1;
+}
+
+.position-background-bird-bottom {
+  right: 50%;
+  bottom: 25%;
+  width: 95%;
+  transform: translate(50%, 45%);
+  opacity: 0.1;
+}
+.position-circle-left-1 {
+  left: -20%;
+  max-width: 400px;
+  width: 25vw;
+  min-width: 200px;
+  bottom: 20px;
+}
+.position-circle-left-2 {
+  left: -20%;
+  max-width: 400px;
+  width: 25vw;
+  min-width: 200px;
+  bottom: 10%;
+}
+.position-circle-left-3 {
+  bottom: 15%;
+  left: -700px;
+  width: 800px;
+}
+.position-circle-left-4 {
+  max-width: 300px;
+  width: 300px;
+  left: -250px;
+  top: 40px;
+}
+.position-circle-left-5{
+  max-width: 400px;
+  width: 25%;
+  left: -20%;
+  min-width: 200px;
+  bottom: 120px;
+}
+.position-circle-right-1 {
+  max-width: 400px;
+  width: 25vw;
+  right: -20%;
+  min-width: 200px;
+  top: 20px;
+}
+.position-circle-right-2 {
+  max-width: 400px;
+  width: 25vw;
+  right: -20%;
+  min-width: 200px;
+  top: 10%;
+}
+
+.position-circle-right-3 {
+  top: 10%;
+  right: -700px;
+  width: 800px;
+}
+.position-circle-right-4 {
+  max-width: 400px;
+  width: 25%;
+  right: -20%;
+  min-width: 200px;
+  top: 120px;
+}
+.position-circle-right-5 {
+  max-width: 300px;
+  width: 300px;
+  right: -250px;
+  bottom: 120px;
+}
+.position-img-birds-left {
+  position: absolute;
+  transition: 1.4s ease-out;
+  top: 8%;
+  width: 14%;
+  max-width: 150px;
+  &.animate {
+  left: 2%;
+  }
+}
+.position-img-birds-left-start {
+  left: -20%;
+}
+.position-img-birds-right{
+  position: absolute;
+  width: 14%;
+  max-width: 150px;
+  transition: 1.4s ease-out;
+  bottom: 5%;
+  &.animate {
+  right: 2%;
+  }
+}
+.position-img-birds-right-start {
+  right: -20%;
+}
+.position-img-birds-right2 {
+  position: absolute;
+  top: 10%;
+  width: 14%;
+  max-width: 150px;
+  transition: 1.4s ease-out;
+  &.animate {
+  right: 2%;
+  }
+}
+@media(max-width:1200px) {
+  .position-circle-left-3 {
+    left: -50%;
+    width: 56%;
+  }
+  .position-circle-left-4 {
+    width: 20%;
+    left: -15%;
+    min-width: 150px;
+  }
+  .position-circle-left-5 {
+    max-width: 400px;
+    width: 25%;
+    left: -20%;
+    min-width: 200px;
+    bottom: 120px;
+  }
+  .position-circle-right-3 {
+    right: -50%;
+    width: 56%;
+  }
+  .position-circle-right-4 {
+    max-width: 400px;
+    width: 25%;
+    right: -20%;
+    min-width: 200px;
+    top: 120px;
+  }
+  .position-circle-right-5 {
+    width: 20%;
+    right: -15%;
+    min-width: 150px;
+  }
+}
+@media(max-width: 768px) {
+  .position-circle-left-1 {
+    left: -170px;
+    bottom: 20%;
+  }
+  .position-circle-left-2 {
+    left: -170px;
+    bottom: 5%;
+  }
+  .position-circle-left-3 {
+    width: 400px;
+    left: -360px;
+  }
+  .position-circle-left-4 {
+    left: -125px;
+    top: 30%;
+  }
+  .position-circle-left-5 {
+    left: -170px;
+    bottom: 20%;
+  }
+  .position-circle-right-1 {
+    right: -170px;
+    top: 21%;
+  }
+  .position-circle-right-2 {
+    right: -170px;
+    top: 0px;
+  }
+  .position-circle-right-3 {
+    width: 400px;
+    right: -360px;
+  }
+  .position-circle-right-4 {
+    right: -170px;
+    top: 20%;
+  }
+  .position-circle-right-5 {
+    right: -125px;
+    bottom: 30%;
+  }
+  .position-img-birds-right {
+    bottom:1%;
+  }
+  .position-img-birds-left {
+    left: 2%;
+    top: 7%;
+    min-width: 80px;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+== render 'praticien/toolbar_praticien'
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Ajouter une facture
+    == render "invoices/new", invoice: @invoice
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Bilan de mes Factures
+    == render "invoices/invoices", invoices: @invoices
+
+

@@ -1,0 +1,14 @@
+<p>Bonjour <%= @user.first_name %>,</p>
+<p>N'oublie pas qu'AUJOURD'HUI tu as des prestations en entreprise avec Zenest : </p>
+
+<ul>
+  <% @events.each do |event| %>
+    <li><%= event.massage_category.name %> de <%= l(event.start_date, format: :hour_details) %> à <%= l(event.end_date, format: :hour_details) %> <%= "(#{event.room.name})" if event.room.present? %></li>
+  <% end %>
+</ul>
+
+<p>Tu peux imprimer <strong><%= link_to 'ici', praticien_print_url, :target => "_blank" %></strong> ton planning d'aujourd'hui.</p>
+<p>Contact sur place : <%= @company.admin.name %> <%= @company.admin.phone unless @company.admin.phone.nil? %></p>
+
+<p>Belle journée,</p>
+<p>La Zenesteam</p>

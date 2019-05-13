@@ -1,0 +1,10 @@
+= content_for(:mail_content)
+  p Bonjour,
+  p Votre compte : #{@resource.email} a été bloqué suite à un trop grand nombre de mots de passe erronés
+  br
+  p Merci de cliquer sur le lien ci-dessous pour débloquer votre compte
+  p= link_to 'Débloquer mon compte', unlock_url(@resource, unlock_token: @token)
+  br
+  p La Zenesteam
+
+== render 'layout_mailer_devise'

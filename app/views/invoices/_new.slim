@@ -1,0 +1,22 @@
+= simple_form_for invoice, url: '/praticien/invoices', method: :post do |f|
+  = f.error_notification
+  .row
+    .col-12.col-md-6
+      .form-group
+        =f.input :title, label:false, placeholder: "Nom de votre facture", class: "form-control"
+    .col-12.col-md-6
+      .form-group
+        =f.input :pdf, as: :file, label:false
+        =f.input :pdf_cache, as: :hidden, label:false
+  .row
+    .col-12.col-md-4
+      .form-group
+        =f.input :date, as: :string, label:false, placeholder: "Date de votre facture", input_html: {class: "flatpickr"}
+    .col-12.col-md-4
+      .form-group
+        =f.input :reference, label:false, placeholder: "Réference de votre facture"
+    .col-12.col-md-4
+      .form-group
+        =f.input :amount, label:false, placeholder: "Montant de votre facture"
+  = f.submit "Ajouter", :class => 'btn-primary w-25 border-radius-100px'
+

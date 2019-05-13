@@ -1,0 +1,51 @@
+<%= stylesheet_pack_tag 'bootstrap'%>
+
+<div class="admin-wrapper">
+  <div class="admin-global-links">
+    <%= link_to "Créer les évents", admin_event_group_event_series_index_path(event_group, event_series: ""), method: :post, class: "admin-btn-success btn_save", id: "event-series-create-link" %>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="d-flex justify-content-center">
+          <div id="picker" class="datepicker admin-datepicker" data-date-format="mm/dd/yyyy"></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <h2>Dates séléctionnées</h2>
+        <div id="dates-container" class="bound-border-left"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#picker').datepicker({
+        format: 'mm/dd/yyyy',
+        multidate: true,
+        daysOfWeekDisabled: [0, 6],
+        clearBtn: true,
+        todayHighlight: true,
+        daysOfWeekHighlighted: [1, 2, 3, 4, 5]
+    });
+
+    $('#picker').on("changeDate", function () {
+        var selectedDates = $('#picker').datepicker('getDates');
+        console.log(selectedDates);
+        const datesContainer = document.getElementById("dates-container");
+        const paramsQuery = document.getElementById("event-series-create-link");
+        datesContainer.innerHTML = "";
+        paramsQuery.href = paramsQuery.href.split("=")[0] + "=" + selectedDates
+        console.log(paramsQuery.href);
+        selectedDates.forEach((selectedDate) => {
+          var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          datesContainer.insertAdjacentHTML("beforeend", `<div class="admin-dates-card">${new Date(selectedDate).toLocaleDateString('fr-FR', options)}</div>`)
+        });
+
+    });
+
+  });
+</script>

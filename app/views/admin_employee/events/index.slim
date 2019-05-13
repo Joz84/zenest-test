@@ -1,0 +1,8 @@
+== render 'admin_employee/toolbar_admin_employee'
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head.mb-4 Prestations à venir
+    .container
+      | <div id="calendar" data-events="#{ @massage_categories }"></div>
+== render 'admin_employee/events/modal_events'

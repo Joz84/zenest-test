@@ -1,0 +1,13 @@
+  <p>Bonjour <%= @user.first_name %>,</p>
+  <p>Demain vous avez des prestations Zenest au sein de votre entreprise :</p>
+  <ul>
+    <% @events.each do |event| %>
+      <!-- <li>Yoga de 12h00 à 14h00 (salle A32) avec Lucie</li> -->
+    <% end %>
+  </ul>
+
+  <p>Vous pouvez imprimer <strong><%= link_to 'ici', admin_employee_print_url, :target => "_blank" %></strong> votre planning de demain.</p>
+
+  <p>Belle journée,</p>
+  <p>Cordialement,</p>
+  <p>La Zenesteam</p>

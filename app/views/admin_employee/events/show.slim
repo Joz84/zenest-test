@@ -1,0 +1,26 @@
+== render 'admin_employee/toolbar_admin_employee'
+
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head
+      | Mise à jour de l'événement : <br>
+      | #{@event.massage_category.name} - <strong>#{l(@event.start_date, format: :long)}</strong> de #{l(@event.start_date, format: :hour_details)} à #{l(@event.end_date, format: :hour_details)} <br>
+      | Nb de places restantes : #{@event.number_of_available_seats} / #{@event.max_attendees}
+      p
+        = link_to "Retour au calendrier", admin_employee_events_path, class: "btn btn-sm btn-primary border-radius-100px mt-3"
+.row
+  .col-12.col-md-6
+    .grey-card.p-1
+      .m-3
+        h6.quicksandlight.grey-card-head Modifier la salle
+        = render 'admin_employee/events/event_room', event: @event
+  - unless @event.calendar.payable
+    .col-12.col-md-6
+      .grey-card.p-1
+        .m-3
+          h6.quicksandlight.grey-card-head Ajouter un participant
+          = render 'admin_employee/attendees/new'
+.grey-card.p-1
+  .m-3
+    h6.quicksandlight.grey-card-head Liste des Participants
+    = render 'admin_employee/attendees/attendees', attendees: @event.attendees

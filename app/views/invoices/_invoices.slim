@@ -1,0 +1,19 @@
+- if invoices.present?
+  table-responsive
+    table.table.quicksandlight
+      thead
+        tr
+          | <th class="d-none d-sm-table-cell" scope="col">#</th>
+          | <th class="d-none d-sm-table-cell" scope="col">Ma Réf.</th>
+          | <th class="d-none d-sm-table-cell" scope="col">Titre</th>
+          | <th scope="col">Date</th>
+          | <th scope="col">Montant</th>
+          / | <th scope="col"><i class="fas fa-download"></i></th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="far fa-eye"></i></th>
+      tbody
+        - invoices.each do |invoice|
+          == render 'invoices/invoice', invoice: invoice
+- else
+  p.quicksandlight Aucune Facture enregistrée
+
+

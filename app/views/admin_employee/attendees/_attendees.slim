@@ -1,0 +1,16 @@
+- if attendees.present?
+  table-responsive
+    table.table.quicksandlight
+      thead
+        tr
+          | <th class="d-none d-sm-table-cell" scope="col">#</th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="far fa-hand-paper"></i></th>
+          | <th scope="col"><i class="fas fa-user-alt"></i></th>
+          | <th scope="col"><i class="far fa-check-circle"></th>
+          | <th scope="col"><i class="far fa-eye"></i></th>
+      tbody
+        - attendees.each do |attendee|
+          == render 'admin_employee/attendees/attendee', attendee: attendee
+- else
+  p.quicksandlight Aucune personne n'est inscrite pour l'instant
+

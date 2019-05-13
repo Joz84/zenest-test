@@ -1,0 +1,43 @@
+a.link-opacity:hover {
+  opacity: 0.6;
+}
+.button-border-white {
+  border: solid 0.1em white !important;
+  color: $white;
+  background: transparent;
+ }
+.button-border-white:hover {
+    color: $brand-color;
+    background-color: $white;
+    text-decoration: none;
+ }
+.circle-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+}
+a:hover {
+  .circle-icon {
+    color: $brand-color;
+    background-color: $white;
+  }
+}
+.blue-button {
+  background: linear-gradient(98deg, rgba(30, 130, 187, 1), rgba(140, 208, 234, 1));
+  color: white;
+  padding: 20px 38px;
+  border-radius: 100px;
+  font-size: 20px;
+}
+.blue-button:hover {
+  text-decoration: none;
+  background: $white;
+  color: $brand-color;
+}
+@media (max-width: 576px ) {
+  .blue-button {
+    padding: 20px 28px;
+    font-size: 16px;
+  }
+}

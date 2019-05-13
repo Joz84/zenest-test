@@ -1,0 +1,23 @@
+.mhv-collapse-header {
+
+}
+.mhv-collapse-item {
+  // width: 100%;
+  // height: 70px;
+  transition: height 500ms;
+}
+
+.mhv-collapse-last-section {
+  width: 100%;
+  height: 70px;
+  transition: height 500ms;
+}
+
+.mhv-h0 {
+  height: 0px;
+  transition: height 500ms;
+  * {
+    visibility: hidden;
+  }
+}
+

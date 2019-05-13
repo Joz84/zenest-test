@@ -1,0 +1,134 @@
+// All Scss must be ordered by tag then class then id and by alphabetic order
+body {
+  font-family: 'Quicksand', arial ;
+  font-weight: 500;
+  -webkit-overflow-scrolling: touch;
+}
+html {
+ scroll-behavior: smooth;
+}
+.anchor {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  top: -70px;
+  left: 0;
+  visibility: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.color-secondary {
+  color: $dark-grey;
+}
+
+.background-grey {
+  background-color: $dark-grey;
+}
+
+#card-element {
+  border-bottom: 1px solid $black;
+}
+.border-radius-100px {
+  border-radius: 100px;
+}
+.font-13px {
+  font-size: 13px;
+}
+.font-14px {
+  font-size: 14px;
+}
+.font-20px {
+  font-size: 20px;
+}
+.font-number {
+  font-size: 40px !important;
+}
+.h2 {
+  font-size: 35px;
+  letter-spacing: .1rem
+}
+.font-25px {
+  font-size: 25px;
+}
+.height-75vh {
+  height: 75vh;
+}
+.height-60px {
+  height: 60px;
+}
+.height-100px {
+  height: 100px;
+}
+.height-140px {
+  height: 140px;
+}
+.height-600px {
+  height: 600px;
+}
+.letter-spacing {
+  letter-spacing: .08rem;
+}
+.margin-negative-16px {
+  margin-top: -16px;
+}
+.margin-bottom-15vh {
+  margin-bottom: 15vh;
+}
+
+.minh-100px {
+  min-height: 100px;
+}
+.margin-p-0 p {
+  margin: 0px;
+}
+.mw-700px {
+  max-width: 700px !important;
+}
+.link-no-decoration:hover{
+  text-decoration: none
+}
+.opacity-03 {
+  opacity: 0.3;
+}
+.opacity-05 {
+  opacity: 0.5;
+}
+.opacity-07 {
+  opacity: 0.7;
+}
+.page-min-height {
+  min-height: calc(100vh - 170px);
+}
+.quicksandlight {
+  font-family: $QuickSand;
+  font-weight: 300 !important;
+}
+.text-shadow {
+  text-shadow: 0px 2px rgba( 80, 80, 60, 0.2);
+  letter-spacing: .08rem;
+}
+.link_invisible {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+li {
+  list-style: none;
+}
+.zoom {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .2s ease-in-out;
+  transition: all 0.4s ease;
+  &:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}

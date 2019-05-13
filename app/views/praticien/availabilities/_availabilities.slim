@@ -1,0 +1,22 @@
+- if availabilities[status].present?
+  table-responsive
+    table.table.quicksandlight
+      thead
+        tr
+          | <th scope="col"><i class="far fa-clock"></i></th>
+          | <th scope="col"><i class="fas fa-home"></th>
+          | <th class="d-none d-sm-table-cell" scope="col"><i class="fas fa-euro-sign"></i></th>
+          | <th scope="col"><i class="far fa-eye"></i></th>
+      tbody
+        - availabilities[status].each do |availability|
+          tr
+            | <td>#{availability.requirement.calendar_day.date.strftime("%d/%m/%Y")}</td>
+            | <td>#{availability.requirement.calendar_day.company.city} #{availability.requirement.calendar_day.company.zipcode}</td>
+            | <td class="d-none d-sm-table-cell">#{humanized_money availability.requirement.amount} en tout</td>
+            - if status == "pending"
+              | <td>#{link_to "Accepter", praticien_availability_path(availability, status: 1), method: :put, class: "text-success link-no-decoration" } / #{link_to "Refuser", praticien_availability_path(availability, status: 2), method: :put, class: "text-danger link-no-decoration"}</td>
+            - else
+              | <td>#{availability.status}</td>
+- else
+  p.quicksandlight Aucune Demande de Disponibilité enregistrée
+
